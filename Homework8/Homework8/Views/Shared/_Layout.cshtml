@@ -21,8 +21,17 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="dropdown">
+                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            Categories
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Artists", "Artist", "Home")</li>
+                            <li>@Html.ActionLink("Artwork", "Artwork", "Home")</li>
+                            <li>@Html.ActionLink("Classifications", "Classification", "Home")</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -38,5 +47,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    @RenderSection("PageLoad", required: false)
 </body>
 </html>
